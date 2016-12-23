@@ -15,9 +15,9 @@ Cette présente charte a pour objectif :
 * [**Guidelines Accessibilité**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md)
 * [**Guidelines HTML**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-HTML.md)
 * [**Guidelines CSS**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-CSS.md)
+* [**Guidelines Développement PHP / MySql**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Developpement-PHP.md)
 * Guidelines Ergonomie _(TODO)_
 * Guidelines JavaScript _(TODO)_
-* Guidelines Développement _(TODO)_
 * Guidelines PHP / MySql _(TODO)_
 * Guidelines WordPress _(TODO)_
 
