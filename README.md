@@ -11,9 +11,9 @@ Cette présente charte a pour objectif :
 
 ## Liste des documents
 
-* **Guidelines Workflow**
-* **Guidelines Accessibilité**
-* **Guidelines HTML**
+* [**Guidelines Workflow**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Workflow.md)
+* [**Guidelines Accessibilité**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md)
+* [**Guidelines HTML**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-HTML.md)
 * Guidelines Ergonomie _(TODO)_
 * Guidelines CSS _(TODO)_
 * Guidelines JavaScript _(TODO)_
