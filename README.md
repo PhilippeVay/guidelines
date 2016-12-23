@@ -21,6 +21,8 @@ Cette présente charte a pour objectif :
 * Guidelines PHP / MySql _(TODO)_
 * Guidelines WordPress _(TODO)_
 
+**NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
+
 ## Licence
 
 Auteur : Alsacréations .
