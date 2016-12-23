@@ -14,8 +14,8 @@ Cette présente charte a pour objectif :
 * [**Guidelines Workflow**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Workflow.md)
 * [**Guidelines Accessibilité**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Accessibilite.md)
 * [**Guidelines HTML**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-HTML.md)
+* [**Guidelines CSS**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-CSS.md)
 * Guidelines Ergonomie _(TODO)_
-* Guidelines CSS _(TODO)_
 * Guidelines JavaScript _(TODO)_
 * Guidelines Développement _(TODO)_
 * Guidelines PHP / MySql _(TODO)_
