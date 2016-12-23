@@ -1,6 +1,6 @@
 # Guidelines Alsacréations
 
-_Nos bonnes pratiques internes à l'agence [Alsacréations](http://www.alsacreations.fr)_
+_Nos bonnes pratiques et recommandations internes à l'agence [Alsacréations](http://www.alsacreations.fr)_
 
 Cette présente charte a pour objectif :
 
