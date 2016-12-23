@@ -46,7 +46,7 @@ Voici la liste des éditeurs de code communément adoptés au sein de l’équip
 
 #### Automatisation de tâches
 
-**Gulp **est utilisé pour automatiser les tâches courantes :
+**Gulp** est utilisé pour automatiser les tâches courantes :
 
 * minification des fichiers js (gulp-uglify)
 * minification des fichiers css (gulp-csso)
