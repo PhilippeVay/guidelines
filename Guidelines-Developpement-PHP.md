@@ -98,7 +98,8 @@ Pour les descriptions de fonctions, le style DocBlock peut être utilisé.
  * @return	string
  */
 
-function xml_encode($str) {}
+function xml_encode($str) {
+}
 ```
 
 ### Indentation et instructions
@@ -122,7 +123,7 @@ Spécifier des valeurs par défaut pour les arguments de fonction évite des app
 function kiwi($val1 = '', $val2 = FALSE)
 ```
 
-En cas de gestion des erreurs avec des try/catch, toujours mettre en derniers les valeurs qui ont une valuer définir par défaut.
+En cas de gestion des erreurs avec des try/catch, toujours mettre en derniers les valeurs qui ont une value définie par défaut.
 
 ```
 function kaki($val1, $val2 = FALSE)
