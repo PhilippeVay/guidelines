@@ -16,9 +16,8 @@ Cette présente charte a pour objectif :
 * [**Guidelines HTML**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-HTML.md)
 * [**Guidelines CSS**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-CSS.md)
 * [**Guidelines Développement PHP / MySql**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-Developpement-PHP.md)
+* [**Guidelines JavaScript / jQuery**](https://github.com/alsacreations/guidelines/blob/master/Guidelines-JavaScript.md)
 * Guidelines Ergonomie _(TODO)_
-* Guidelines JavaScript _(TODO)_
-* Guidelines PHP / MySql _(TODO)_
 * Guidelines WordPress _(TODO)_
 
 **NOTE : Aucun de ces documents n'est figé, ils sont en constante amélioration et évolution.**
