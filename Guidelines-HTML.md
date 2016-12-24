@@ -17,7 +17,7 @@
 
 ## Doctype
 
-Par défaut, et sans contre-indication du client, un doctype HTML5 est choisi pour sa concision, sa pérennité et sa robustesse (pas de bugs ou manque de support connus des navigateurs):
+Le doctype HTML5 est fortement recommandé.
 
 ```
 <!doctype html>
@@ -75,11 +75,9 @@ Dans le cas de modifications à opérer pour les anciennes versions d'Internet E
 
 ## HTML5shim / shiv
 
-Pour IE6, IE7 et IE8, il est nécessaire de déclarer les éléments HTML5 dans le DOM en JavaScript pour pouvoir les styler.
-
 **_Note :_ par défaut, nous ne tenons plus compte des versions Internet Explorer inférieures à IE10, donc nous n’employons plus HTML5shim._**
 
-[HTML5shiv](http://code.google.com/p/html5shiv/) sera employé pour cette opération qui applique déjà des styles par défaut. À systématiquement placer dans la section `<head>`.
+Pour IE6, IE7 et IE8, il est nécessaire de déclarer les éléments HTML5 dans le DOM en JavaScript pour pouvoir les styler. [HTML5shiv](http://code.google.com/p/html5shiv/) est dédié à cet usage et affecte déjà des styles par défaut. À systématiquement placer dans la section `<head>`.
 
 ```
 <!--[if lt IE 9]>
