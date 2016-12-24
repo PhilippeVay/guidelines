@@ -1,28 +1,18 @@
 # Guidelines : WorkFlow
 
-_Bonnes pratiques pour un WorkFlow de production_
+_Quelques bonnes pratiques pour un WorkFlow de production_
 
 ## Généralités
 
 * L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
 * Les indentations se font à l’aide de deux espaces et non sous forme de tabulations.
 Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
-*  JavaScript apporte une amélioration progressive, c’est-à-dire qu’il se produit une dégradation gracieuse lorsqu’il est désactivé.
-* Les scripts doivent être placés de préférence en fin de document, avant la balise `</body>` (ceci n’est plus extrêmement significatif suite aux optimisations des navigateurs mais permet d’éviter les écueils majeurs et de visualiser l’ordre de chargement au même endroit).
-* L’appel à une librairie ou à un framework (jQuery) fait toujours apparaître le numéro de version et le suffixe `-min` si le fichier a été minifié.
-* Les attributs `defer` et `async` seront utilisés à bon escient pour réduire la latence (voir [Article](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)).
-* Utiliser "use strict"; en début de script pour activer le mode strict d’ECMAScript 5+
-* Valider le code avec JSHint (disponible en plugins d’éditeur de code ou gulp)
-* Toujours utiliser le mot clé `var` pour déclarer une variable et maîtriser sa portée
-* Toujours terminer les instructions par un `;`
-* Toujours commenter (même brièvement) le code à l’aide de `//` ou `/* */`
-* Ne jamais laisser un appel à `console.log()` ou `eval()` dans le code en production.
 
 ## Organisation globale et outils
 
 ### Git
 
-Tous les projets sont versionnés sur Git, serveur interne.
+Tous les projets sont versionnés sur Git.
 
 La notation des versions (tags) sera sous la forme : version majeure . version mineure . correctifs mineurs. Exemple: `v1.3.37`
 
@@ -38,11 +28,12 @@ _**Note :** Yarn est un excellent gestionnaire de dépendances également._
 
 #### Éditeurs
 
-Voici la liste des éditeurs de code communément adoptés au sein de l’équipe :
+Voici la liste des éditeurs de code communément adoptés :
 
 * Atom.io
 * Sublime Text (2 ou 3)
 * Brackets.io
+* Visual Studio Code
 
 #### Automatisation de tâches
 
@@ -97,20 +88,6 @@ indent_size = 2
 charset = utf-8
 ```
 
-## Déroulement projet
-
-* faire des vérifications progressives sur notre CheckList
-* Bon à Tirer à faire signer par le client
-
-### Fin de projet
-
-* Tests généraux
-* CheckList
-* Test accessibilité sur [http://wave.webaim.org/](http://wave.webaim.org/) (sans obligation de résultat)
-* Bon de livraison
-* Facture
-* Débrief interne (+ débrief client selon les cas)
-
 # Méthodologie d’intégration
 
 Les outils ci-après sont contenus dans le prototype de nouveau projet [Bretzel](https://github.com/alsacreations/bretzel)[ ](https://github.com/alsacreations/bretzel)(sur Github)
@@ -141,7 +118,7 @@ Ne pas utiliser la ligne de commande locale sur le partage de fichiers distant
 #### Usage direct sur le serveur distant
 
 * Se connecter en SSH sur le serveur de développement
-* Aller dans le répertoire du projet avec la commande cd (ex : `cd /var/www/client/www/`)
+* Aller dans le répertoire du projet avec la commande cd (ex : `cd /var/www/`)
 * Utiliser les commandes habituelles de gulp
 
 
