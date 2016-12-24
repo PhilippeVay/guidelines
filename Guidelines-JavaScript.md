@@ -9,11 +9,11 @@ _Bonnes pratiques JavaScript (et jQuery) en production_
 * Valider le code avec JSHint (disponible en plugins d’éditeur de code ou gulp)
 * Les indentations se font à l’aide de deux espaces et non avec la tabulation.
 Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
-*  JavaScript apporte une amélioration progressive, c’est-à-dire qu’il se produit une dégradation gracieuse lorsqu’il est désactivé.
+* JavaScript apporte une amélioration progressive, c’est-à-dire qu’il se produit une dégradation gracieuse lorsqu’il est désactivé.
 * Les scripts doivent être placés de préférence en fin de document, avant la balise `</body>` (ceci n’est plus extrêmement significatif suite aux optimisations des navigateurs mais permet d’éviter les écueils majeurs et de visualiser l’ordre de chargement au même endroit).
 * L’appel à une librairie ou à un framework (jQuery) fait toujours apparaître le numéro de version et le suffixe `-min` si le fichier a été minifié.
 * Les attributs `defer` et `async` seront utilisés à bon escient pour réduire la latence (voir [Article](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)).
-* Utiliser "use strict"; en début de script pour activer le mode strict d’ECMAScript 5+
+* Utiliser "use strict"; en début de script pour activer le mode strict d’ECMAScript.
 * Toujours utiliser le mot clé `var` pour déclarer une variable et maîtriser sa portée
 * Toujours terminer les instructions par un `;`
 * Toujours commenter (même brièvement) le code à l’aide de `//` ou `/* */`
@@ -187,66 +187,9 @@ jQuery(document).ready(function($) {
 
 Modèle relativement simple de plugin-type, avec options par défaut, remplacées/complétées par les paramètres `data-*` en HTML, méthodes privées et publiques. Voir aussi sur le dépôt Github [https://github.com/alsacreations/pepin/blob/master/plugin.js](https://github.com/alsacreations/pepin/blob/master/plugin.js)
 
-```
-(function($) {
-
- $.pluginname = function(el, options) {
-
-    var defaults = {
-      target:null, // target element
-    };
-
-    var plugin = this;
-
-    plugin.settings = {};
-
-    var $element = $(el),
-        element = el;
-
-    // Plugin initialization (public method)
-    plugin.init = function() {
-       plugin.settings = $.extend({}, defaults, options);
-       updateSettingsFromHTMLData();
-       registerEvents();
-       // Other init stuff
-    };
-
-    // Reads plugin settings from HTML data-* attributes (camelCase) (private)
-    var updateSettingsFromHTMLData = function() {
-       var data = $element.data();
-       for(var dat in data) plugin.settings[dat] = data[dat];
-    };
-
-    // Event Handlers on HTML components inside the plugin (private method)
-    var registerEvents = function() {
-      $element.on('click', function() {
-        // Do something
-      });
-    };
-
-    plugin.init();
-
- };
-
- $.fn.pluginname = function(options) {
-
-     return this.each(function() {
-         if (undefined === $(this).data('pluginname')) {
-             var plugin = new $.pluginname(this, options);
-             $(this).data('pluginname', plugin);
-         }
-     });
-
- };
-
- $('.jq-pluginname').pluginname();
-
-})(jQuery);
-```
-
 * Simplifier au maximum le code en découpant par actions simples.
 * Utiliser au maximum le document "statique" HTML, dont les attributs `data-*`, les classes, ou l’ordre des éléments pour construire un script autour, plutôt que de se reposer uniquement sur JS ou des variables. Placer les attributs `data-*` sur les éléments pour lesquels ils seront utiles, notamment le conteneur du plugin
-* Différencier classes qui vont permettre de styler l’élément (dans les fichiers CSS) et classes qui vont permettre d’activer un comportement spécifique JS sur l’élément (fichiers JS)
+* Différencier classes qui vont permettre de styler l’élément (dans les fichiers CSS) et classes qui vont permettre d’activer un comportement spécifique JS sur l’élément (fichiers JS) en les préfixant par `js-`.
 
 ```
 <div class="slideshow js-slideshow" data-timing="2000" ...>
@@ -265,10 +208,10 @@ plutôt que
 $('element').hide();
 ```
 
-* De même pour les animations/transitions, il est souvent préférable de passer par l’ajout/suppression de classes CSS
+* De même pour les animations/transitions, il est souvent préférable de passer par l’ajout/suppression de classes CSS.
 * Se reposer sur les éléments pouvant recevoir le focus (`<a>`, `<button>`, `<input>`) pour l’ajout d’événements `onclick`, etc.
 * Ne pas hésiter à utiliser des plugins éprouvés (toujours tester s’ils peuvent être multiples sur une même page).
-* Penser à prévoir les cas de figure où le code peut être appelé plusieurs fois dans une même page,  ou plusieurs fois par erreur sur un même élément (par exemple avec la gestion on/off des événements, les attributs `data-*` pour savoir s’il a déjà été appliqués, etc).
-* Penser à prévoir les cas de figure où
+* Penser à prévoir les cas de figure où le code peut être appelé plusieurs fois dans une même page, ou plusieurs fois par erreur sur un même élément (par exemple avec la gestion on/off des événements, les attributs `data-*` pour savoir s’il a déjà été appliqués, etc).
+* Penser à prévoir les cas de figure où :
   * le fichier peut être rechargé dans la même page
   * le code doit pouvoir être rappelé sur le même élément sans provoquer de bugs notamment au niveau des styles modifiés, des événements ajoutés (penser à off/on)
