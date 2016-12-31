@@ -4,16 +4,16 @@
 
 ## Généralités
 
-* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
-* Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
-* Les liens absolus ne doivent pas faire apparaître le protocole (par exemple href="//www.alsacreations.fr/" et non href="http://www.alsacreations.fr").
-* Choisir des noms en anglais prioritairement (classes, fichiers, images, etc.).
-* Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-2.0.min.css`, etc), sauf convention contraire apportée par le client.
+* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM),
+* Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/),
+* Les liens absolus ne doivent pas faire apparaître le protocole (par exemple href="//www.alsacreations.fr/" et non href="http://www.alsacreations.fr"),
+* Choisir des noms en anglais prioritairement (classes, fichiers, images, etc.),
+* Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-2.0.min.css`, etc), sauf convention contraire apportée par le client,
 * Les noms d'éléments et des attributs sont rédigés en minuscules,
 * Les éléments sont imbriqués correctement,
 * Les éléments sont fermés à l'aide de la balise correspondante (exception pour éléments auto-fermants HTML5 : pas de `/>`),
 * Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`),
-* L'usage des double quotes est préconisé autour des valeurs d’attributs (ex. `class="fruit"`) ainsi que les simples quotes dans les autres langages JavaScript, PHP (ex. `alert('blup');`) de manière à faciliter les imbrications (ex. `alert('<p class="fruit">plop</p>');`)
+* L'usage des double quotes est préconisé autour des valeurs d’attributs (ex. `class="fruit"`) ainsi que les simples quotes dans les autres langages JavaScript, PHP (ex. `alert('blup');`) de manière à faciliter les imbrications (ex. `alert('<p class="fruit">plop</p>');`).
 
 ## Doctype
 
@@ -75,7 +75,7 @@ Dans le cas de modifications à opérer pour les anciennes versions d'Internet E
 
 ## HTML5shim / shiv
 
-**_Note :_ par défaut, nous ne tenons plus compte des versions Internet Explorer inférieures à IE10, donc nous n’employons plus HTML5shim._**
+**_Note :_ par défaut, nous ne tenons plus compte des versions Internet Explorer inférieures à IE10, donc nous n’employons plus HTML5shim.**
 
 Pour IE6, IE7 et IE8, il est nécessaire de déclarer les éléments HTML5 dans le DOM en JavaScript pour pouvoir les styler. [HTML5shiv](http://code.google.com/p/html5shiv/) est dédié à cet usage et affecte déjà des styles par défaut. À systématiquement placer dans la section `<head>`.
 
@@ -196,17 +196,17 @@ Les éléments ayant une condition ou un état particulier seront préfixés :
 
 ## Nombre de classes par élément
 
-Pour des raisons évidentes de maintenance et de lisibilité, nous limitons le nombre de classes appliquées à un élément à 4 ou 5 au grand maximum, même si nous employons un framework CSS qui nous inciterait dépasser ce nombre.
+Pour des raisons évidentes de maintenance et de lisibilité, nous limitons le nombre de classes appliquées à un élément à 4 ou 5 au grand maximum, même si nous employons un framework CSS qui nous inciterait à dépasser ce nombre.
 
 Nous éviterons de telles syntaxes : `img class="mod clearfix fl inbl w200p pas mb1 large-mb2 small-mbn"`, mais opterons plutôt pour une classe personnalisée : `img class="media"`.
 
-## Liens target _blank
+## Liens `target="_blank"`
 
 Dans la mesure du possible, éviter les liens ouvrant une nouvelle fenêtre/onglet, sans les signaler explicitement. Ils perturbent la navigation classique du visiteur et peuvent créer des failles de sécurité.
 
 Voir aussi [https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c](https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c)
 
-**_Toujours utiliser `rel="noopener noreferrer"` sur des liens `target="_blank"`_**
+**_Note :_ Toujours utiliser `rel="noopener noreferrer"` sur des liens `target="_blank"`**
 
 ## Meta spécifiques - SEO et réseaux sociaux
 
@@ -214,7 +214,7 @@ Les liens entre site web et les différents réseaux sociaux sont de plus en plu
 
 #### Twitter card
 
-Elle permet une présentation améliorée d’un site web sur le réseau Twitter et lien ce site web à un compte Twitter via son URL mentionnée dans un Tweet. Exemple :
+Elle permet une présentation améliorée d’un site web sur le réseau Twitter et lie ce site web à un compte Twitter via son URL mentionnée dans un Tweet. Exemple :
 
 ## ![twitter card](images/html01.png)
 
@@ -247,9 +247,9 @@ Une fois en place, il faut demander la validation par Twitter : [https://dev.twi
 
 #### Facebook et OpenGraph
 
-L’[OpenGraph](http://ogp.me/) permet, à l’instar de Twitter Cards, de maîtriser d’avantage les contenus partagés sur le réseaux social Facebook (entre autres). Le titre, l’image d’illustration, la description, l’URL, etc. peuvent être personnalisés pour ce réseaux spécifique.
+L’[OpenGraph](http://ogp.me/) permet, à l’instar de Twitter Cards, de maîtriser davantage les contenus partagés sur le réseau social Facebook (entre autres). Le titre, l’image d’illustration, la description, l’URL, etc. peuvent être personnalisés pour ce réseau spécifique.
 
-Parmi les valeurs de og: les plus utilisées on retrouve :
+Parmi les valeurs de `og:` les plus utilisées on retrouve :
 
 ```
 <meta property="og:title" content="Alsacréations, agence Web exotique">

@@ -29,7 +29,7 @@ Documentation : [http://www.nicoespeon.com/fr/2013/05/plongee-au-coeur-de-oocss/
 
 Un "reset" CSS permettant d’harmoniser les styles par défaut des navigateurs est systématiquement appliqué en début de projet.
 
-Normalize.css est recommandé. Il s’agit d’un célèbre reset CSS employé par Twitter, Github, Bootstrap, Guardian, KNACSS, etc.
+Normalize.css est recommandé. Il s’agit d’un célèbre reset CSS employé par Twitter, GitHub, Bootstrap, Guardian, KNACSS, etc.
 
 Documentation : [http://necolas.github.io/normalize.css/](http://necolas.github.io/normalize.css/)
 
@@ -94,7 +94,7 @@ En dernier ressort, employer la ressource [Browserhacks](http://browserhacks.com
 
 ## Commentaires
 
-Usage de mots-clés informatifs au sein de commentaires importants sont appréciés, sous la forme :
+Usage de mots-clés informatifs au sein de commentaires importants est apprécié, sous la forme :
 
 * `@TODO` → point à finir / corriger avant de livrer
 * `@BUGFIX` → explication d’une correction de bug
@@ -112,7 +112,7 @@ Ainsi, il est indiqué de pouvoir cibler n’importe quel élément indépendamm
 De manière générale :
 
 * **Il est préférable de cibler les éléments à l’aide de leur classe HTML** qui pourrait être utilisée dans n’importe quel contexte, par exemple `.title-primary`,
-* **Les sélecteurs  #id doivent être évités en CSS** car trop spécifiques dans le calcul du poids. Si un id doit être ciblé, préférer un sélecteur d’attribut, par exemple `[id=header]`,
+* **Les sélecteurs  #id doivent être évités en CSS** car trop spécifiques dans le calcul du poids. Si un id doit être ciblé, préférer un sélecteur d’attribut, par exemple `[id="header"]`,
 * **Les sélecteurs en cascade ou hyper-structurel doivent être évités** de manière générale (ex: `ul.header li .info` ou `h1 + p + p`),
 * La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
 
@@ -151,7 +151,7 @@ Opter pour le modèle de boîte CSS3 (`box-sizing: border-box`) en début de la 
 }
 ```
 
-ou bien :
+ou mieux :
 
 ```
 html {
@@ -561,7 +561,7 @@ Documentation : [https://github.com/bendc/frontend-guidelines#units](https://git
 
 ### Animations gourmandes
 
-* Toujours préciser quelle(s) propriété(s) doit être animée dans transition ou animation
+* Toujours préciser quelle(s) propriété(s) doi(ven)t être animée(s) dans transition ou animation
 * Éviter d’animer des propriétés autres que **transform** ou **opacity** ou **filter** (ou alors ajouter la
 propriété `will-change` et/ou le hack de `translateZ()`.) Source : [https://tzi.github.io/presentation-CSS-perfs/](https://tzi.github.io/presentation-CSS-perfs/)
 
@@ -680,7 +680,7 @@ Documentation : [http://sass-lang.com/](http://sass-lang.com/)
 
 Pour éviter les intervalles qui se chevauchent, ou des Media Queries trop variés, la convention pour définir la valeur d’un Breakpoint est systématiquement :
 
-* **(min-width: ($breakpoint + 1))**** **
+* **(min-width: ($breakpoint + 1))**
 * **(max-width: $breakpoint)**
 
 Exemple avec les variables de Breakpoints suivantes :
@@ -795,7 +795,7 @@ Autant que possible, privilégier le chargement de polices légères et respectu
 
 Alsacréations partage une collection de fontes adaptées et optimisées pour le web : [https://github.com/alsacreations/webfonts](https://github.com/alsacreations/webfonts)
 
-Il est conseillé de récupérer les fontes sur ce repo Github si cela est possible.
+Il est conseillé de récupérer les fontes sur ce repo GitHub si cela est possible.
 
 Le format WOFF2 (Web Open Font Format 2) est privilégié dans tous les cas de figure, pour sa compatibilité et sa légèreté. En second lieu, utiliser WOFF.
 
@@ -825,9 +825,9 @@ Voici un exemple de chargement de police conseillé (IE9 minimum) :
 Le remplissage par du contenu temporaire peut faire appel à *Lorem Ipsum*.
 
 * Pour le texte :
-    * [http://schnaps.it/](http://schnaps.it/)
-    * [http://loripsum.net/](http://loripsum.net/)
-    * [http://chuckipsum.com/](http://chuckipsum.com/)
+    * [http://schnaps.it](http://schnaps.it/)
+    * [http://loripsum.net](http://loripsum.net/)
+    * [http://chuckipsum.com](http://chuckipsum.com/)
 * Pour les images :
-    * [http://placekitten.com/](http://placekitten.com/)
-    * [http://flickholdr.com/](http://flickholdr.com/)
+    * [http://placekitten.com](http://placekitten.com/)
+    * [http://flickholdr.com](http://flickholdr.com/)
