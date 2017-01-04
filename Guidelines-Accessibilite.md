@@ -4,7 +4,7 @@ _Bonnes pratiques accessibilité en production_
 
 ## Généralités
 
-* Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé.
+* Ne pas fixer de hauteur sur les éléments afin que le contenu reste lisible lorsque le texte est zoomé
 * Respecter la hiérarchie des titres `<hX>`
 * Ne pas supprimer l’*outline* autour des éléments cliquables (pas de `outline: none`)
 * Utiliser les éléments HTML pour leur fonction/sémantique et non pas pour leur forme
@@ -69,7 +69,7 @@ Ne sont pas concernés :
 
 * Le fil d’ariane
 * Les systèmes de pagination
-* table des matières
+* Table des matières
 
 Plus d’informations : [http://www.accede-web.com/notices/html-css-javascript/1-structure/1-5-role-navigation/](http://www.accede-web.com/notices/html-css-javascript/1-structure/1-5-role-navigation/)
 
@@ -81,7 +81,7 @@ On peut générer du contenu en CSS à l’aide de `::before` et `::after` et la
 
 Mais la plupart des lecteurs d’écrans actuels peuvent retranscrire ce contenu, ce qui peut provoquer une gêne (voir [http://tink.uk/accessibility-support-for-css-generated-content/](http://tink.uk/accessibility-support-for-css-generated-content/)).
 
-Pour éviter cela, il est préférable d’insérer l’attribut `aria-hidden=true` sur l’élément.
+Pour éviter cela, il est préférable d’insérer l’attribut `aria-hidden="true"` sur l’élément.
 
 Exemple :
 
@@ -163,7 +163,7 @@ Ne pas faire :
   background-image: url("facebook.png");
 }
 ```
-→ dans ce cas là, le lecteur d’écran retranscrit l’intégralité de l’URL.
+→ dans ce cas-là, le lecteur d’écran retranscrit l’intégralité de l’URL.
 
 Même en ajoutant un attribut `title="Retrouvez-nous sur Facebook"` sur le lien, celui-ci reste considéré comme vide.
 De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement restitué par le lecteur d’écran (tout dépend de la configuration de l’utilisateur).
@@ -184,7 +184,7 @@ De plus, il n’est pas sûr à 100% que l’attribut `title` soit correctement 
   background-image: url("facebook.png");
 }
 ```
-→ dans ce cas là, le lecteur d’écran retranscrit bien _"Retrouvez-nous sur Facebook"_.
+→ dans ce cas-là, le lecteur d’écran retranscrit bien _"Retrouvez-nous sur Facebook"_.
 
 ### Ouverture dans une nouvelle fenêtre
 
@@ -282,9 +282,9 @@ Label/input
 
 **TODO**
 
-Player accessibles
+Players accessibles
 
-Sous-titres avec webVTT
+Sous-titres avec WebVTT
 
 ## Design
 
@@ -302,7 +302,7 @@ Sous-titres avec webVTT
 
 **TODO**
 
-Ajax et ARIA live
+AJAX et ARIA live
 
 ### Composants JS
 
@@ -316,7 +316,7 @@ ARIA
 
 ## Ressources
 
-* Notices Accedeweb [http://www.accede-web.com/notices/](http://www.accede-web.com/notices/)
+* Notices Accède Web [http://www.accede-web.com/notices/](http://www.accede-web.com/notices/)
 * Patterns accessibles [http://a11yproject.com/patterns/](http://a11yproject.com/patterns/)
 * Exemples ARIA [http://heydonworks.com/practical_aria_examples/](http://heydonworks.com/practical_aria_examples/)
 * RGAA 3 [https://references.modernisation.gouv.fr/rgaa-accessibilite](https://references.modernisation.gouv.fr/rgaa-accessibilite)

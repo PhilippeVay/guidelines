@@ -1,20 +1,20 @@
-# Guidelines : WorkFlow
+# Guidelines : Workflow
 
-_Quelques bonnes pratiques pour un WorkFlow de production_
+_Quelques bonnes pratiques pour un Workflow de production_
 
 ## Généralités
 
-* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
+* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM)
 * Les indentations se font à l’aide de deux espaces et non sous forme de tabulations.
-Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
+Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/)
 
 ## Organisation globale et outils
 
 ### Git
 
-Tous les projets sont versionnés sur Git.
+Tous les projets sont versionnés avec Git.
 
-La notation des versions (tags) sera sous la forme : version majeure . version mineure . correctifs mineurs. Exemple: `v1.3.37`
+La notation des versions (tags) sera sous la forme : version majeure . version mineure . correctifs mineurs (Semantic Versioning ou [semver](http://semver.org)). Exemple: `v1.3.37`
 
 ### Dépendances
 
@@ -45,7 +45,7 @@ Voici la liste des éditeurs de code communément adoptés :
 * concaténation tous types (gulp-concat)
 * renommage (gulp-rename)
 * sourcemaps (gulp-sourcemaps)
-* autoprefixer (gulp-autoprefixer)
+* Autoprefixer (gulp-autoprefixer)
 * compression des images (avec imagemin, pour jpeg, png, svg)
 * En bonus : browser-sync
 
@@ -73,7 +73,7 @@ Il est prévu pour fonctionner automatiquement avec les outils suivants :
 
 ### EditorConfig
 
-Afin d’assurer une consistance entre notre éditeur HTML et notre convention d’espaces / tabulations pour chaque projet :
+Afin d’assurer une cohérence entre notre éditeur HTML et notre convention d’espaces / tabulations pour chaque projet :
 
 * Installer le [plugin EditorConfig](http://editorconfig.org/#download) correspondant à notre éditeur
 * Ajouter un fichier [.editorconfig](http://editorconfig.org/) à la racine du projet, dont le contenu sera :
@@ -94,7 +94,7 @@ Les outils ci-après sont contenus dans le prototype de nouveau projet [Bretzel]
 
 ## Préprocesseurs
 
-L’emploi de surcouches préprocesseurs (LESS, Sass, Stylus), destinées à automatiser certaines tâches pourra être justifié selon les projets et les besoins du clients. Il ne sera cependant pas systématique, chacun de nos intégrateurs ayant suffisamment de compétences pour disposer d’outils annexes.
+L’emploi de surcouches préprocesseurs (LESS, Sass, Stylus), destinées à automatiser certaines tâches pourra être justifié selon les projets et les besoins du client. Il ne sera cependant pas systématique, chacun de nos intégrateur·trice·s ayant suffisamment de compétences pour disposer d’outils annexes.
 
 Si le choix d’un préprocesseur est justifié, nous opterons par défaut pour **Sass** plutôt que LESS.
 
@@ -136,12 +136,12 @@ Ne pas utiliser la ligne de commande locale sur le partage de fichiers distant
 
 La configuration de Gulp se trouve au sein des fichiers :
 
-* `package.json` (liste des plugins : minify, autoprefixer, Sass, etc.)
+* `package.json` (liste des plugins : minify, Autoprefixer, Sass, etc.)
 * `gulpfile.js` (liste des tâches)
 
 #### Commandes
 
-* `gulp` (équivalent à gulp default, qui est lié aux tâches suivantes communes)
+* `gulp` (équivalent à `gulp default`, qui est lié aux tâches suivantes communes)
 * `gulp styles` : génération des styles à partir des pré-processeurs
 * `gulp scripts` : génération des scripts
 * `gulp watch` : exécution des tâches communes précédentes lorsqu’un fichier change

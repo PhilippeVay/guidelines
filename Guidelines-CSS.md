@@ -5,15 +5,15 @@ _Bonnes pratiques CSS (et SCSS)  en production_
 
 ## Généralités
 
-* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
+* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM)
 * Les indentations se font à l’aide de deux espaces et sous forme de tabulations.
-Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
-* Le code CSS produit doit être propre, optimisé et (autant que faire se peut) valide selon les normes (http://jigsaw.w3.org/css-validator/).
-* La feuille de style CSS est de préférence unique et minifiée et appelée à l'aide d'un élément `<link>` dans la section `<head>`. Pas de `@import` dans un fichier CSS.
+Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/)
+* Le code CSS produit doit être propre, optimisé et (autant que faire se peut) valide selon les normes (http://jigsaw.w3.org/css-validator/)
+* La feuille de style CSS est de préférence unique et minifiée et appelée à l'aide d'un élément `<link>` dans la section `<head>`. Pas de `@import` dans un fichier CSS
 * Privilégier tant que possible les syntaxes via propriétés raccourcies : `margin`, `padding`, `font`, `border`, `background`, `border-radius`
-* Utiliser toujours le même type de guillemets. De préférence des doubles guillemets, exemple : `content: ""`;
+* Utiliser toujours le même type de guillemets. De préférence des doubles guillemets, exemple : `content: ""`
 * Utiliser toujours des guillemets pour les valeurs dans les sélecteurs, exemple : `input[type="checkbox"]`
-* Éviter de spécifier les unités pour les valeurs nulles ainsi que pour les hauteurs de lignes, exemple : `margin: 0; line-height: 1.5`.
+* Éviter de spécifier les unités pour les valeurs nulles ainsi que pour les hauteurs de lignes, exemple : `margin: 0; line-height: 1.5`
 
 ## Patterns visuels (OOCSS)
 
@@ -29,7 +29,7 @@ Documentation : [http://www.nicoespeon.com/fr/2013/05/plongee-au-coeur-de-oocss/
 
 Un "reset" CSS permettant d’harmoniser les styles par défaut des navigateurs est systématiquement appliqué en début de projet.
 
-Normalize.css est recommandé. Il s’agit d’un célèbre reset CSS employé par Twitter, GitHub, Bootstrap, Guardian, KNACSS, etc.
+[Normalize.css](https://necolas.github.io/normalize.css/) est recommandé. Il s’agit d’un célèbre reset CSS employé par Twitter, GitHub, Bootstrap, Guardian, KNACSS, etc.
 
 Documentation : [http://necolas.github.io/normalize.css/](http://necolas.github.io/normalize.css/)
 
@@ -69,7 +69,7 @@ selecteur {
 }
 ```
 
-**_Note : l’outil "CSScomb" permet de réordonner automatiquement les déclarations CSS. Il peut être utilisé sous forme de plugin (Atom, Brackets, Sublime text) ou intégré à un Workflow sous forme de tâche Gulp ou Grunt : [http://csscomb.com/](http://csscomb.com/)_**
+**_Note : l’outil "CSScomb" permet de réordonner automatiquement les déclarations CSS. Il peut être utilisé sous forme de plugin (Atom, Brackets, Sublime text) ou intégré à un Workflow sous forme de tâche Gulp ou Grunt : [http://csscomb.com](http://csscomb.com)_**
 
 ## Préfixes navigateurs
 
@@ -82,7 +82,7 @@ Exemple :
 * `-ms-propriété`
 * `propriété`
 
-**_Note : l’outil "Autoprefixer" permet de préfixer automatiquement les propriétés CSS. Il peut être utilisé sous forme de plugin (Atom, Brackets, Sublime text) ou intégré à un Workflow sous forme de tâche Gulp ou Grunt : [https://autoprefixer.github.io/](https://autoprefixer.github.io/)_**
+**_Note : l’outil "Autoprefixer" permet de préfixer automatiquement les propriétés CSS. Il peut être utilisé sous forme de plugin (Atom, Brackets, Sublime Text) ou intégré à un Workflow sous forme de tâche Gulp ou Grunt : [https://autoprefixer.github.io/](https://autoprefixer.github.io/)_**
 
 ## Hacks navigateurs
 
@@ -94,7 +94,7 @@ En dernier ressort, employer la ressource [Browserhacks](http://browserhacks.com
 
 ## Commentaires
 
-Usage de mots-clés informatifs au sein de commentaires importants est apprécié, sous la forme :
+L'usage de mots-clés informatifs au sein de commentaires importants est apprécié, sous la forme :
 
 * `@TODO` → point à finir / corriger avant de livrer
 * `@BUGFIX` → explication d’une correction de bug
@@ -111,10 +111,10 @@ Ainsi, il est indiqué de pouvoir cibler n’importe quel élément indépendamm
 
 De manière générale :
 
-* **Il est préférable de cibler les éléments à l’aide de leur classe HTML** qui pourrait être utilisée dans n’importe quel contexte, par exemple `.title-primary`,
-* **Les sélecteurs  #id doivent être évités en CSS** car trop spécifiques dans le calcul du poids. Si un id doit être ciblé, préférer un sélecteur d’attribut, par exemple `[id="header"]`,
-* **Les sélecteurs en cascade ou hyper-structurel doivent être évités** de manière générale (ex: `ul.header li .info` ou `h1 + p + p`),
-* La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`).
+* **Il est préférable de cibler les éléments à l’aide de leur classe HTML** qui pourrait être utilisée dans n’importe quel contexte, par exemple `.title-primary`
+* **Les sélecteurs  #id doivent être évités en CSS** car trop spécifiques dans le calcul du poids. Si un id doit être ciblé, préférer un sélecteur d’attribut, par exemple `[id="header"]`
+* **Les sélecteurs en cascade ou hyper-structurels doivent être évités** de manière générale (ex: `ul.header li .info` ou `h1 + p + p`)
+* La règle `!important` doit être éradiquée si possible du fait de son poids extrêmement important (certaines parties des styles peuvent toutefois exceptionnellement employer à juste titre `!important`)
 
 ## Taille des polices
 
@@ -310,7 +310,7 @@ input[type="submit"] {
 }
 ```
 
-Documentation : [http://cssspecificity.com/](http://cssspecificity.com/)
+Documentation : [http://cssspecificity.com](http://cssspecificity.com)
 
 ### Sélecteur #id
 
@@ -597,7 +597,8 @@ Documentation : [https://csstriggers.com/](https://csstriggers.com/)
 
 ### `@font-face`
 
-N’imposez pas de chargements aux anciens navigateurs (IE8). Privilégiez `.woff2`.
+* N’imposez pas de chargements aux anciens navigateurs (IE8)
+* Privilégiez `.woff2`
 
 **Non :**
 
@@ -674,7 +675,7 @@ p {
 ```
 
 
-Documentation : [http://sass-lang.com/](http://sass-lang.com/)
+Documentation : [http://sass-lang.com](http://sass-lang.com)
 
 ### Media Queries
 
@@ -712,8 +713,8 @@ $large-screen: 1199px;
 
 ### Préfixes navigateurs
 
-* Automatiser la gestion des préfixes à l’aide de Autoprefixer, ne pas le faire à la main
-* Ne pas utiliser un mixin Sass/LESS pour cette tâche.
+* Automatiser la gestion des préfixes à l’aide d'Autoprefixer, ne pas le faire à la main
+* Ne pas utiliser un mixin Sass/LESS pour cette tâche
 
 **Non (mixin Sass) :**
 
@@ -795,7 +796,7 @@ Autant que possible, privilégier le chargement de polices légères et respectu
 
 Alsacréations partage une collection de fontes adaptées et optimisées pour le web : [https://github.com/alsacreations/webfonts](https://github.com/alsacreations/webfonts)
 
-Il est conseillé de récupérer les fontes sur ce repo GitHub si cela est possible.
+Il est conseillé de récupérer les fontes sur ce dépôt GitHub si cela est possible.
 
 Le format WOFF2 (Web Open Font Format 2) est privilégié dans tous les cas de figure, pour sa compatibilité et sa légèreté. En second lieu, utiliser WOFF.
 
@@ -825,9 +826,9 @@ Voici un exemple de chargement de police conseillé (IE9 minimum) :
 Le remplissage par du contenu temporaire peut faire appel à *Lorem Ipsum*.
 
 * Pour le texte :
-    * [http://schnaps.it](http://schnaps.it/)
-    * [http://loripsum.net](http://loripsum.net/)
-    * [http://chuckipsum.com](http://chuckipsum.com/)
+    * [http://schnaps.it](http://schnaps.it)
+    * [http://loripsum.net](http://loripsum.net)
+    * [http://chuckipsum.com](http://chuckipsum.com)
 * Pour les images :
-    * [http://placekitten.com](http://placekitten.com/)
-    * [http://flickholdr.com](http://flickholdr.com/)
+    * [http://placekitten.com](http://placekitten.com)
+    * [http://flickholdr.com](http://flickholdr.com)

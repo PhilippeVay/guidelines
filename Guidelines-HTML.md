@@ -4,16 +4,16 @@
 
 ## Généralités
 
-* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM),
-* Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/),
-* Les liens absolus ne doivent pas faire apparaître le protocole (par exemple href="//www.alsacreations.fr/" et non href="http://www.alsacreations.fr"),
-* Choisir des noms en anglais prioritairement (classes, fichiers, images, etc.),
-* Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-2.0.min.css`, etc), sauf convention contraire apportée par le client,
-* Les noms d'éléments et des attributs sont rédigés en minuscules,
-* Les éléments sont imbriqués correctement,
-* Les éléments sont fermés à l'aide de la balise correspondante (exception pour éléments auto-fermants HTML5 : pas de `/>`),
-* Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`),
-* L'usage des double quotes est préconisé autour des valeurs d’attributs (ex. `class="fruit"`) ainsi que les simples quotes dans les autres langages JavaScript, PHP (ex. `alert('blup');`) de manière à faciliter les imbrications (ex. `alert('<p class="fruit">plop</p>');`).
+* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM)
+* Les indentations se font à l’aide de deux espaces et non à l'aide de tabulations. Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/)
+* Les liens absolus ne doivent pas faire apparaître le protocole (par exemple href="//www.alsacreations.fr/" et non href="http://www.alsacreations.fr")
+* Choisir des noms en anglais prioritairement (classes, fichiers, images, etc.)
+* Séparer les noms des fichiers, des images des classes et id CSS par des tirets (`.slide-info`, `styles-ie.css`, `jquery-2.0.min.css`, etc), sauf convention contraire apportée par le client
+* Les noms d'éléments et des attributs sont rédigés en minuscules
+* Les éléments sont imbriqués correctement
+* Les éléments sont fermés à l'aide de la balise correspondante (exception pour éléments auto-fermants HTML5 : pas de `/>`)
+* Les valeurs identiques aux attributs ne sont pas renseignées sauf nécessité (ex. en HTML5 pas de `checked="checked"`)
+* L'usage des double quotes est préconisé autour des valeurs d’attributs (ex. `class="fruit"`) ainsi que les simples quotes dans les autres langages JavaScript, PHP (ex. `alert('blup');`) de manière à faciliter les imbrications (ex. `alert('<p class="fruit">plop</p>');`)
 
 ## Doctype
 
@@ -85,7 +85,7 @@ Pour IE6, IE7 et IE8, il est nécessaire de déclarer les éléments HTML5 dans 
 <![endif]-->
 ```
 
-Si Modernizr est embarqué dans la page (pour bénéficier d’un support dédié à l’amélioration progressive pour les anciens navigateurs), ce script peut déjà inclure un équivalent HTML5shiv (si on l’ajoute lors de la composition de Modernizr).
+Si [Modernizr](http://www.alsacreations.com/outils/lire/1387-modernizr.html) est embarqué dans la page (pour bénéficier d’un support dédié à l’amélioration progressive pour les anciens navigateurs), ce script peut déjà inclure un équivalent HTML5shiv (si on l’ajoute lors de la composition de Modernizr).
 
 ## Forcer le mode de compatibilité IE
 
@@ -102,7 +102,7 @@ Pour forcer IE à passer dans le mode de compatibilité standard le plus récent
 L’icône de favori est utilisée de différentes manières par les navigateurs et systèmes. Le format ICO est ancien, le format PNG permet une meilleure définition avec un poids plus léger. Mais :
 
 * IE ne reconnaît que la relation "shortcut icon" (standard : “icon”), ne reconnaît pas le format PNG, et la version 10 ne supporte plus les commentaires conditionnels (pour isoler sa déclaration non standard et le format ICO). IE (y compris 10) va tout de même chercher par défaut dans la racine `/favicon.ico`
-* Tous les autres navigateurs reconnaissent le format PNG, mais Chrome et Safari choisissent le format ICO s’il est précisé plutôt que le PNG. Opera choisit au hasard.
+* Tous les autres navigateurs reconnaissent le format PNG, mais Chrome et Safari choisissent le format ICO s’il est précisé plutôt que le PNG. Opera choisit au hasard
 
 Source : [http://realfavicongenerator.net/](http://realfavicongenerator.net/)
 
@@ -123,7 +123,7 @@ Structure satisfaisante de favicon :
 
 ## Sémantique globale
 
-Les éléments HTML5 `<header>`, `<article>`, `<main>`, `<footer>`, `<aside>`, `<section>` et `<nav>` sont privilégiés aux éléments neutres `<div>` si leur fonction s’y prête.
+Les éléments HTML5 `<header>`, `<article>`, `<main>`, `<footer>`, `<aside>`, `<section>` et `<nav>` sont privilégiés par rapport aux éléments neutres `<div>` si leur fonction s’y prête.
 
 **_Note : l’élément `<main>` n’est complètement reconnu qu’à partir de IE11_**
 
@@ -198,11 +198,11 @@ Les éléments ayant une condition ou un état particulier seront préfixés :
 
 Pour des raisons évidentes de maintenance et de lisibilité, nous limitons le nombre de classes appliquées à un élément à 4 ou 5 au grand maximum, même si nous employons un framework CSS qui nous inciterait à dépasser ce nombre.
 
-Nous éviterons de telles syntaxes : `img class="mod clearfix fl inbl w200p pas mb1 large-mb2 small-mbn"`, mais opterons plutôt pour une classe personnalisée : `img class="media"`.
+Nous éviterons de telles syntaxes : `<img class="mod clearfix fl inbl w200p pas mb1 large-mb2 small-mbn" ...`, mais opterons plutôt pour une classe personnalisée : `<img class="media" ...`.
 
 ## Liens `target="_blank"`
 
-Dans la mesure du possible, éviter les liens ouvrant une nouvelle fenêtre/onglet, sans les signaler explicitement. Ils perturbent la navigation classique du visiteur et peuvent créer des failles de sécurité.
+Dans la mesure du possible, éviter les liens ouvrant une nouvelle fenêtre/onglet sans les signaler explicitement. Ils perturbent la navigation classique du visiteur et peuvent créer des failles de sécurité.
 
 Voir aussi [https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c](https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c)
 

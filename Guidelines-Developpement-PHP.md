@@ -6,9 +6,9 @@
 
 ## Généralités
 
-* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
+* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM)
 * Les indentations se font à l’aide de deux espaces et sous forme de tabulations.
-Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
+Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/)
 * La numérotation des versions suit [Semantic Versioning](http://semver.org/)
 
 ## Garder à l’esprit
@@ -19,7 +19,7 @@ Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig]
 
 Conventions générales :
 
-* [http://www.phptherightway.com/](http://www.phptherightway.com/)
+* [http://www.phptherightway.com](http://www.phptherightway.com)
 * [http://www.php-fig.org/psr/](http://www.php-fig.org/psr/) (de 1 à ?, en anglais a priori)
 * [http://www.php-fig.org/psr/psr-0/fr/](http://www.php-fig.org/psr/psr-0/fr/) : Autoloading Standard
 * [http://www.php-fig.org/psr/psr-1/fr/](http://www.php-fig.org/psr/psr-1/fr/) : Basic Coding Standard
@@ -147,14 +147,14 @@ LIMIT 5, 100");
 
 Quelques critères essentiels sont à observer (parmi d’autres, la liste est non exhaustive) :
 
-* Utiliser les fonctions d’échappement pour valider les données utlisateur, avant traitement ou insertion dans la base de données.
+* Utiliser les fonctions d’échappement pour valider les données utlisateur, avant traitement ou insertion dans la base de données :
     * [mysql_real_escape_string](http://php.net/manual/fr/function.mysql-real-escape-string.php) pour les chaînes passées à la base MySQL
     * [preg_quote](http://php.net/manual/fr/function.preg-quote.php) pour les expressions régulières
     * Utiliser les fonctions de PDO quand c’est possible pour [échapper](http://www.php.net/manual/fr/pdostatement.bindparam.php) ou [préparer une requête](http://www.php.net/manual/fr/pdo.prepare.php)
-* Vérifier toutes les variables trouvées dans `$_REQUEST`, `$_POST`, `$_GET` et `$_COOKIE` avant usage.
-* Désactiver la directive de configuration `magic_quotes` (par défaut).
-* Exploiter au minimum les fichiers et les chemins d’accès au filesystem, ainsi que les fonctions d’exécution de code (`eval`, `system`, `exec`, etc).
-* Utiliser un framework tel que CodeIgniter qui sécurise par défaut quantité d’actions.
+* Vérifier toutes les variables trouvées dans `$_REQUEST`, `$_POST`, `$_GET` et `$_COOKIE` avant usage
+* Désactiver la directive de configuration `magic_quotes` (par défaut)
+* Exploiter au minimum les fichiers et les chemins d’accès au filesystem, ainsi que les fonctions d’exécution de code (`eval`, `system`, `exec`, etc)
+* Utiliser un framework tel que CodeIgniter qui sécurise par défaut quantité d’actions
 
 ## MySQL
 
@@ -220,8 +220,8 @@ user_status
 
 Afin d’améliorer la performance :
 
-* Des index doivent être placés sur les champs servant dans les requêtes SELECT.
-* Dans le cas de jointures, les champs mis en relation (d’une table à l’autre) doivent être de même type (par exemple `INT` avec `INT` et non `INT` avec `MEDIUMINT`).
+* Des index doivent être placés sur les champs servant dans les requêtes SELECT
+* Dans le cas de jointures, les champs mis en relation (d’une table à l’autre) doivent être de même type (par exemple `INT` avec `INT` et non `INT` avec `MEDIUMINT`)
 
 ## Serveur et performance
 

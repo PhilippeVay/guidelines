@@ -5,26 +5,26 @@ _Bonnes pratiques JavaScript (et jQuery) en production_
 
 ## Généralités
 
-* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM).
+* L’encodage des fichiers et des bases de données doit se faire en UTF-8 (sans BOM)
 * Valider le code avec JSHint (disponible en plugins d’éditeur de code ou gulp)
 * Les indentations se font à l’aide de deux espaces et non avec la tabulation.
-Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/).
-* JavaScript apporte une amélioration progressive, c’est-à-dire qu’il se produit une dégradation gracieuse lorsqu’il est désactivé.
-* Les scripts doivent être placés de préférence en fin de document, avant la balise `</body>` (ceci n’est plus extrêmement significatif suite aux optimisations des navigateurs mais permet d’éviter les écueils majeurs et de visualiser l’ordre de chargement au même endroit).
-* L’appel à une librairie ou à un framework (jQuery) fait toujours apparaître le numéro de version et le suffixe `-min` si le fichier a été minifié.
-* Les attributs `defer` et `async` seront utilisés à bon escient pour réduire la latence (voir [Article](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html)).
-* Utiliser "use strict"; en début de script pour activer le mode strict d’ECMAScript.
+Pour assurer une cohérence inter-projets, utiliser la convention [EditorConfig](http://editorconfig.org/)
+* JavaScript apporte une amélioration progressive, c’est-à-dire qu’une dégradation gracieuse se produit lorsqu’il est désactivé
+* Les scripts doivent être placés de préférence en fin de document, avant la balise `</body>` (ceci n’est plus extrêmement significatif suite aux optimisations des navigateurs mais permet d’éviter les écueils majeurs et de visualiser l’ordre de chargement au même endroit)
+* L’appel à une librairie ou à un framework (jQuery) fait toujours apparaître le numéro de version et le suffixe `-min` si le fichier a été minifié
+* Les attributs `defer` et `async` seront utilisés à bon escient pour réduire la latence (voir [Article](http://www.alsacreations.com/astuce/lire/1562-script-attribut-async-defer.html))
+* Utiliser `"use strict";` en début de script pour activer le mode strict d’ECMAScript
 * Toujours utiliser le mot clé `var` pour déclarer une variable et maîtriser sa portée
 * Toujours terminer les instructions par un `;`
 * Toujours commenter (même brièvement) le code à l’aide de `//` ou `/* */`
-* Ne jamais laisser un appel à `console.log()` ou `eval()` dans le code en production.
-* Ne pas déclarer de fonctions/variables dans le scope global qui pourraient amener à des conflits avec d’autres scripts. Si besoin, utiliser une [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression).
+* Ne jamais laisser un appel à `console.log()` ou `eval()` dans le code en production
+* Ne pas déclarer de fonctions/variables dans le scope global qui pourraient amener à des conflits avec d’autres scripts. Si besoin, utiliser une [IIFE](https://en.wikipedia.org/wiki/Immediately-invoked_function_expression)
 
 Suivre les recommandations de [http://chimera.labs.oreilly.com/books/1234000000262/apa.html](http://chimera.labs.oreilly.com/books/1234000000262/apa.html)
 
 ## Déclaration et variables
 
-Utiliser les structures littérales simple pour déclarer tableaux et objets.
+Utiliser les structures littérales simples pour déclarer tableaux et objets.
 
 ```
 var montableau = [1,2,3];
@@ -76,9 +76,9 @@ var monprojet = {
 
 De préférence :
 
-* Nommer les fonctions/plugins d’après les classes HTML avec lesquelles elles vont interagir.
-* Les préfixer par un code relatif au nom du projet.
-* Placer les accolades sur la première ligne de bloc et non sur la suivante pour éviter due à l’insertion implicite de `;` pour terminer les lignes.
+* Nommer les fonctions/plugins d’après les classes HTML avec lesquelles elles vont interagir
+* Les préfixer par un code relatif au nom du projet
+* Placer les accolades sur la première ligne de bloc et non sur la suivante pour éviter due à l’insertion implicite de `;` pour terminer les lignes
 
 ```
 if (quelquechose) {
@@ -90,7 +90,7 @@ if (quelquechose) {
 
 ## Chaînes de texte
 
-Utiliser les simples quotes `'` pour conserver une consistance et faciliter l’écriture du HTML.
+Utiliser les simples quotes `'` pour conserver une cohérence et faciliter l’écriture du HTML.
 
 ```
 var msg = 'Ceci est un message';
@@ -173,7 +173,7 @@ charset = utf-8
 var $el = $('#el');
 ```
 
-* Encapsuler les développements jQuery tant que possible dans des plugins, ce n’est pas compliqué, idéalement avec le *boilerplate*.
+* Encapsuler les développements jQuery tant que possible dans des plugins, ce n’est pas compliqué, idéalement avec le *boilerplate*
 
 * Démarrer avec cette syntaxe pour document ready :
 
@@ -185,18 +185,18 @@ jQuery(document).ready(function($) {
 
 ### Plugin boilerplate
 
-Modèle relativement simple de plugin-type, avec options par défaut, remplacées/complétées par les paramètres `data-*` en HTML, méthodes privées et publiques. Voir aussi sur le dépôt Github [https://github.com/alsacreations/pepin/blob/master/plugin.js](https://github.com/alsacreations/pepin/blob/master/plugin.js)
+Modèle relativement simple de plugin-type, avec options par défaut, remplacées/complétées par les paramètres `data-*` en HTML, méthodes privées et publiques. Voir aussi sur le dépôt GitHub [https://github.com/alsacreations/pepin/blob/master/plugin.js](https://github.com/alsacreations/pepin/blob/master/plugin.js)
 
-* Simplifier au maximum le code en découpant par actions simples.
-* Utiliser au maximum le document "statique" HTML, dont les attributs `data-*`, les classes, ou l’ordre des éléments pour construire un script autour, plutôt que de se reposer uniquement sur JS ou des variables. Placer les attributs `data-*` sur les éléments pour lesquels ils seront utiles, notamment le conteneur du plugin
-* Différencier classes qui vont permettre de styler l’élément (dans les fichiers CSS) et classes qui vont permettre d’activer un comportement spécifique JS sur l’élément (fichiers JS) en les préfixant par `js-`.
+* Simplifier au maximum le code en découpant par actions simples
+* Utiliser au maximum le document "statique" HTML, dont les attributs `data-*`, les classes ou l’ordre des éléments pour construire un script autour, plutôt que de se reposer uniquement sur JS ou des variables. Placer les attributs `data-*` sur les éléments pour lesquels ils seront utiles, notamment le conteneur du plugin
+* Différencier classes qui vont permettre de styler l’élément (dans les fichiers CSS) et classes qui vont permettre d’activer un comportement spécifique JS sur l’élément (fichiers JS) en les préfixant par `js-`
 
 ```
 <div class="slideshow js-slideshow" data-timing="2000" ...>
    <figure class="slideshow-item">
 ```
 
-* Utiliser les classes CSS du projet pour cacher/masquer des éléments, lancer des transitions, ou changer leur état
+* Utiliser les classes CSS du projet pour cacher/masquer des éléments, lancer des transitions ou changer leur état
 
 ```
 $('element').addClass('visually-hidden');
@@ -208,10 +208,10 @@ plutôt que
 $('element').hide();
 ```
 
-* De même pour les animations/transitions, il est souvent préférable de passer par l’ajout/suppression de classes CSS.
-* Se reposer sur les éléments pouvant recevoir le focus (`<a>`, `<button>`, `<input>`) pour l’ajout d’événements `onclick`, etc.
-* Ne pas hésiter à utiliser des plugins éprouvés (toujours tester s’ils peuvent être multiples sur une même page).
-* Penser à prévoir les cas de figure où le code peut être appelé plusieurs fois dans une même page, ou plusieurs fois par erreur sur un même élément (par exemple avec la gestion on/off des événements, les attributs `data-*` pour savoir s’il a déjà été appliqués, etc).
+* De même pour les animations/transitions, il est souvent préférable de passer par l’ajout/suppression de classes CSS
+* Se reposer sur les éléments pouvant recevoir le focus (`<a>`, `<button>`, `<input>`) pour l’ajout d’événements `onclick`, etc
+* Ne pas hésiter à utiliser des plugins éprouvés (toujours tester s’ils peuvent être multiples sur une même page)
+* Penser à prévoir les cas de figure où le code peut être appelé plusieurs fois dans une même page ou plusieurs fois par erreur sur un même élément (par exemple avec la gestion on/off des événements, les attributs `data-*` pour savoir s’il a déjà été appliqués, etc)
 * Penser à prévoir les cas de figure où :
   * le fichier peut être rechargé dans la même page
   * le code doit pouvoir être rappelé sur le même élément sans provoquer de bugs notamment au niveau des styles modifiés, des événements ajoutés (penser à off/on)
